@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>ZIM Frame - Fit Template</title>
+
+<!-- Welcome to ZIM at https://zimjs.com - Code Creativity!              	        -->
+<!-- ZIM runs on the HTML Canvas powered by JavaScript and CreateJS https://createjs.com -->
+<!-- Founded by Inventor Dan Zen - http://danzen.com - Canadian New Media Award Winner 	-->
+<!-- ZIM is free to use. You can donate to help improve ZIM at http://zimjs.com/donate 	-->
+
+<script src="https://d309knd7es5f10.cloudfront.net/createjs_1.1_min.js"></script>
+<script src="https://d309knd7es5f10.cloudfront.net/zim_8.3.0.js"></script>
+<!-- use zimjs.com/distill for minified individual functions! -->
+
+<script>
+
+// SCALING OPTIONS
+// scaling can have values as follows with full being the default
+// "fit"	sets canvas and stage to dimensions and scales to fit inside window size
+// "outside"	sets canvas and stage to dimensions and scales to fit outside window size
+// "full"	sets stage to window size with no scaling
+// "tagID"	add canvas to HTML tag of ID - set to dimensions if provided - no scaling
+
+var scaling = "fit"; // this will resize to fit inside the screen dimensions
+var width = 1024;
+var height = 768;
+var color = light; // ZIM colors like green, blue, pink, faint, clear, etc. available globally
+var outerColor = dark; // any HTML colors like "violet", "#333", etc. fine to use
+
+var assets = ["12697.wav", "51239.wav", "381353.wav", "410516.wav", "447474.wav", "3167031.wav"];
+var path = "../assets/";
+
+var frame = new Frame(scaling, width, height, color, outerColor, assets, path);
+frame.on("ready", function() {
+    zog("ready from ZIM Frame"); // logs in console (F12 - choose console)
+
+    var stage = frame.stage;
+    var stageW = frame.width;
+    var stageH = frame.height;
+
+    // see http://zimjs.com/learn.html for video and code tutorials
+    // see http://zimjs.com/docs.html for documentation
+    // see http://zimjs.com/bits.html for 64 Interactive Media techniques
+
+    // put your code here (you can delete this sample code)
+
+    // loop(6, function(i) {
+    //
+    // })
+
+    var sound1= frame.asset("12697.wav");
+    var sound2= frame.asset("51239.wav");
+    var sound3= frame.asset("381353.wav");
+    var sound4= frame.asset("410516.wav");
+    var sound5= frame.asset("447474.wav");
+    var sound6= frame.asset("3167031.wav");
+    // var img = frame.asset("pizza.jpg");
+
+    // img.addTo();
+    var rect = new Rectangle(stageW,stageH, light).center();
+    rect.on("click", function(){
+        sound5.play();
+    })
+    frame.on("keydown", function (e) {
+        if (e.keyCode == 70) {
+            sound5.play();
+        }
+    });
+    frame.on("keydown", function (e) {
+        if (e.keyCode == 32 || e.keyCode == 87) {
+            sound6.play();
+        }
+    });
+
+    frame.on("keydown", function (e) {
+        if (e.keyCode == 38 || e.keyCode == 65) {
+            sound1.play();
+        }
+    });
+    frame.on("keydown", function (e) {
+        if (e.keyCode == 37 || e.keyCode == 83) {
+            sound2.play();
+        }
+    });
+
+    frame.on("keydown", function (e) {
+        if (e.keyCode == 39 || e.keyCode == 68) {
+            sound3.play();
+        }
+    });
+
+    frame.on("keydown", function (e) {
+        if (e.keyCode == 40 || e.keyCode == 71) {
+            sound4.play();
+        }
+    });
+
+    stage.update(); // this is needed to show any changes
+
+}); // end of ready
+
+</script>
+
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+
+</head>
+
+<body>
+<!-- canvas with id="myCanvas" is made by zim Frame -->
+</body>
+</html>
