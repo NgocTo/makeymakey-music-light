@@ -1,5 +1,5 @@
 # Tech Studio project
-Arduino project
+The goal of this project is to create interactive objects and environment for the users with touch, sound and lights.
 ## Group Members
 - Alicia Martin
 - Ngoc To (Jade)
