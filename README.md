@@ -1,4 +1,4 @@
-# makeymakey-music-light
+# Tech Studio project
 Arduino project
 ## Group Members
 - Alicia Martin
